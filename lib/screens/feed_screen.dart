@@ -73,6 +73,7 @@ class _FeedScreenState extends State<FeedScreen> {
         child: Column(
           children: [
             BlocBuilder<FeedBloc, FeedState>(
+              // Changing the visibility of the search bar conditionally.
               buildWhen: (previous, current) =>
                   previous.isSearchBarVisible != current.isSearchBarVisible,
               builder: (context, state) {
@@ -82,9 +83,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   child: state.isSearchBarVisible
                       ? SearchBarWidget(
                           controller: _searchController,
-                          onChanged: (value) {
-                            // Implement search functionality here
-                          },
+                          onChanged: (value) {},
                         )
                       : null,
                 );
@@ -96,6 +95,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   context.read<FeedBloc>().add(const FeedRefreshed());
                 },
                 child: BlocBuilder<FeedBloc, FeedState>(
+                  // Handling buildWhen for infinte scrolling
                   buildWhen: (previous, current) {
                     if (previous is FeedLoaded && current is FeedLoaded) {
                       return previous.items.length != current.items.length ||

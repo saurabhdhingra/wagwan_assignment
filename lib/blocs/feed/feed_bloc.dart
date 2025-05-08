@@ -17,6 +17,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     on<SearchBarVisibilityChanged>(_onSearchBarVisibilityChanged);
   }
 
+  // Setting the state while items are being fetched from the UNSPLASH API
   Future<void> _onFeedFetched(
     FeedFetched event,
     Emitter<FeedState> emit,
@@ -48,6 +49,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     }
   }
 
+  // Feed refresh handler
   Future<void> _onFeedRefreshed(
     FeedRefreshed event,
     Emitter<FeedState> emit,
@@ -62,6 +64,8 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     }
   }
 
+  // Fetching more items when the user is about to reach the end of the list.
+  // Item are loaded in advance to give a seamless user experience.
   Future<void> _onApproachingListEnd(
     ApproachingListEnd event,
     Emitter<FeedState> emit,
@@ -92,6 +96,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     }
   }
 
+  // Search bar visibility handler
   void _onSearchBarVisibilityChanged(
     SearchBarVisibilityChanged event,
     Emitter<FeedState> emit,
