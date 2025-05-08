@@ -18,7 +18,7 @@ class SearchBarWidget extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: const Color.fromARGB(26, 0, 0, 0),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -35,7 +35,8 @@ class SearchBarWidget extends StatelessWidget {
             borderSide: BorderSide.none,
           ),
           filled: true,
-          fillColor: Theme.of(context).colorScheme.surfaceVariant,
+          fillColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+          contentPadding: const EdgeInsets.symmetric(vertical: 0),
         ),
       ),
     );

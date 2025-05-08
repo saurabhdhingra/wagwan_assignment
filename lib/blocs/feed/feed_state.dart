@@ -2,18 +2,22 @@ import 'package:equatable/equatable.dart';
 import '../../models/feed_item.dart';
 
 abstract class FeedState extends Equatable {
-  const FeedState();
+  final bool isSearchBarVisible;
+
+  const FeedState({
+    this.isSearchBarVisible = true,
+  });
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [isSearchBarVisible];
 }
 
 class FeedInitial extends FeedState {
-  const FeedInitial();
+  const FeedInitial() : super();
 }
 
 class FeedLoading extends FeedState {
-  const FeedLoading();
+  const FeedLoading() : super();
 }
 
 class FeedLoaded extends FeedState {
@@ -23,26 +27,29 @@ class FeedLoaded extends FeedState {
   const FeedLoaded({
     required this.items,
     this.hasReachedMax = false,
-  });
+    bool isSearchBarVisible = true,
+  }) : super(isSearchBarVisible: isSearchBarVisible);
 
   FeedLoaded copyWith({
     List<FeedItem>? items,
     bool? hasReachedMax,
+    bool? isSearchBarVisible,
   }) {
     return FeedLoaded(
       items: items ?? this.items,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
+      isSearchBarVisible: isSearchBarVisible ?? this.isSearchBarVisible,
     );
   }
 
   @override
-  List<Object?> get props => [items, hasReachedMax];
+  List<Object?> get props => [items, hasReachedMax, isSearchBarVisible];
 }
 
 class FeedError extends FeedState {
   final String message;
 
-  const FeedError(this.message);
+  const FeedError(this.message) : super();
 
   @override
   List<Object?> get props => [message];

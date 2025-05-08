@@ -11,9 +11,6 @@ class PlaceholderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

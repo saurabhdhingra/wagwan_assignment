@@ -14,3 +14,16 @@ class FeedFetched extends FeedEvent {
 class FeedRefreshed extends FeedEvent {
   const FeedRefreshed();
 }
+
+class ApproachingListEnd extends FeedEvent {
+  const ApproachingListEnd();
+}
+
+class SearchBarVisibilityChanged extends FeedEvent {
+  final bool isVisible;
+
+  const SearchBarVisibilityChanged(this.isVisible);
+
+  @override
+  List<Object?> get props => [isVisible];
+}
