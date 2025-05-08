@@ -1,16 +1,45 @@
-# wagwan_assignment
+# Instagram Explore Feed – Wagwan Assignment
 
-A new Flutter project.
+A clean and responsive Flutter implementation of an Instagram-style **Explore Feed**, using `BLoC` for state management and **Unsplash API** to fetch images dynamically.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **BLoC Pattern** for scalable and maintainable state management
+- **buildWhen** used to implement smooth infinite scrolling
+- **Unsplash API** integration for real-world, high-quality image content
+- Lazy-loading, loading indicators, and error handling
+- Responsive UI suitable for different screen sizes
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo
+
+> Watch the video demo here: [Google Drive Video](https://drive.google.com/drive/folders/1kAP3kYZY41uopM5KmE5lf3hAXIc99bDZ?usp=sharing)
+
+---
+
+## Tech Stack
+
+- **Flutter**
+- **Dart**
+- **Flutter BLoC**
+- **Unsplash API**
+
+---
+
+## Learnings
+
+- Gained hands-on experience with `buildWhen` in BLoC for performance-tuned rebuilds
+- Implemented a clean separation between `UI`, `State`, and `Business Logic`
+- Practiced building infinite scroll with paginated API calls
+- Explored working with third-party APIs and environment-safe key handling
+
+---
+
+## Setup Instructions
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/saurabhdhingra/wagwan_assignment.git
